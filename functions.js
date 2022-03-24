@@ -16,10 +16,18 @@ OUTPUT:
     { name: 'rover', type: 'dog' },
 
 ]*/
+//filter
+
+
+
 
 export function getDogs(arr) {
-    return [];
+    return arr.filter(pet => pet.type === 'dog');
 }
+//filter loops over arr and its going to find everything that equals to the left and push it to a new array
+
+
+
 
 /*
 Output:
@@ -27,9 +35,12 @@ Output:
 ['spot', 'rover', 'jumpy', 'einstein']
 */
 
+
 export function makeArrayOfNames(arr) {
-    return [];
+    return arr.map(animal => animal.name);
 }
+
+
 
 /*
 OUTPUT: 
@@ -76,7 +87,7 @@ Output:
 ]*/
 
 export function makeArrayWithIsHungry(arr) {
-     return []
+    return [];
 }
 
 /*
