@@ -24,10 +24,16 @@ OUTPUT:
 export function getDogs(arr) {
     return arr.filter(pet => pet.type === 'dog');
 }
+    // export function getDogs(arr) {
+    //     const newArr = arr.filter(i => {
+    //         if(i.type === 'dog'){
+    //             return i;
+    //         }
+    //     });
+    //     return newArr;
 //filter loops over arr and its going to find everything that equals to the left and push it to a new array
-
-
-
+//take in an array, filters the array, gets a booger and looks for the
+//.type of the booger in each object of the array 
 
 /*
 Output:
@@ -37,9 +43,8 @@ Output:
 
 
 export function makeArrayOfNames(arr) {
-    return arr.map(animal => animal.name);
+    return arr.map(pet => pet.name);
 }
-
 
 
 /*
@@ -48,7 +53,13 @@ OUTPUT:
 */
 
 export function getNamesOfDogs(arr) {
-    return [];
+    const filterArr = arr.filter(pet => {
+        if(pet.type === 'dog') {
+            return pet;
+        }
+    });
+    const mapArr = filterArr.map(pet => pet.name);
+    return mapArr;
 }
 
 /*
@@ -57,8 +68,11 @@ Output:
 ['cat', 'frog', 'dog', 'dog']
 */
 
+
 export function makeReversedArrayOfTypes(arr) {
-    return [];
+    const mapArr = arr.map(pet => pet.type);
+    const reverseArr = mapArr.reverse();
+    return reverseArr;
 }
 
 /*
@@ -73,8 +87,22 @@ Output:
 */
 
 export function makeSpanishLanguageArray(arr) {
-    return [];
+    const mapArr = arr.map((pet => {
+        return {
+            nombre: pet.name,
+            tipo: pet.type
+        };
+    }));
+    return mapArr;
 }
+
+    //taking keys and 
+//     const hello = arr.map(pet => pet.translate(arr.key));
+//     return hello;
+//     // const spArr = arr.map(pet => pet.lang
+//     // return p=lang"sp" 
+//    // return spanishArray = ('spArr').translate({lang: "sp", t: dict});
+
 
 /*
 Output:
@@ -87,8 +115,22 @@ Output:
 ]*/
 
 export function makeArrayWithIsHungry(arr) {
-    return [];
+    const newArr = arr.map((pet) => ({
+        name: pet.name,
+        isHungry: true,
+        type: pet.type
+    }));
+    return newArr;
 }
+
+//     })
+//    for (i of  arr) {
+//     const hungry= {
+//         isHungry: true
+//         arr.push(hungry)
+// }
+//     return hungry;
+
 
 /*
 Output:
@@ -101,7 +143,10 @@ Output:
 ]*/
 
 export function makeShoutingArray(arr) {
-    return [];
+    arr.forEach(item => {
+        item.name = item.name.toUpperCase();
+    });
+    return arr;
 }
 
 
@@ -112,7 +157,11 @@ Output:
 */
 
 export function makeStringArray(arr) {
-    return [];
+    const accumulator = [];
+    for(let item of arr)
+        accumulator.push(item.name + item.type);
+    return accumulator;
+       
 }
 
 /*
@@ -125,7 +174,10 @@ OUTPUT:
 */
 
 export function findByName(name, arr) {
-    return {};
+    for(let item of arr)
+        if(item.name === name) {
+            return item;
+        }
 }
 
 /*
@@ -151,9 +203,22 @@ Output:
 */
 
 export function makeArrayOfArraysOfArrays(arr) {
-    return [];
+    const newArr = [];
+
+    arr.map(item =>item.name);
+    for(let item of arr) {
+        const arrayEl = [];
+        push ();
+        // array.push('name', item.name);
+        // array.push('type', item.type);
+    }
+    newArr.push(arrayEl);
+    return newArr;
+    //dont understand mapping 
 }
 
+
+// const mapArr = arr.map(pet => pet.type);
 ////////////////////////////////////////////////////////
 
 /*
